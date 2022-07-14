@@ -237,12 +237,12 @@ const createList = ({
 
       onScrollbarScroll (distanceToGo, totalSteps) {
         const offset =
-          ((estimatedTotalSize.value - (clientSize.value)) /
+          ((this.estimatedTotalSize - (this.clientSize)) /
             totalSteps) *
           distanceToGo
         this.scrollTo(
           Math.min(
-            estimatedTotalSize.value - (clientSize.value),
+            this.estimatedTotalSize - (this.clientSize),
             offset
           )
         )

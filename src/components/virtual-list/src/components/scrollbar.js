@@ -163,14 +163,14 @@ const ScrollBar = createComponent({
           ])
 
       this.$emit('start-move')
-      attachEvents()
+      this.attachEvents()
     },
 
     onMouseUp(){
       this.state.isDragging = false
       this.state[this.bar.axis] = 0
       this.$emit('stop-move')
-      detachEvents()
+      this.detachEvents()
     },
 
     onMouseMove(e) {
@@ -185,7 +185,7 @@ const ScrollBar = createComponent({
       // using the current track's offset top/left - the current pointer's clientY/clientX
       // to get the relative position of the pointer to the track.
       const offset =
-        (trackRef.value.getBoundingClientRect()[this.bar.direction] -
+        (this.$refs.trackRef.getBoundingClientRect()[this.bar.direction] -
           e[this.bar.client]) *
         -1
 

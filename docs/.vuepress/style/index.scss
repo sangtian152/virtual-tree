@@ -1,0 +1,15 @@
+.theme-container {
+    .theme-default-content {
+        max-width: 100%!important;
+        table {
+            width: 100%;
+        }
+        pre {
+            margin: 0;
+        }
+    }
+    .page-meta,
+    .page-nav {
+        max-width: 100%!important;
+    }
+}

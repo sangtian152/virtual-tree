@@ -30,7 +30,7 @@ const buildTransformers = () => {
 module.exports = {
     title: 'Hello VuePress',
     description: 'Just playing around',
-    base: '/', // 部署站点的基础路径
+    base: '/virtual-tree', // 部署站点的基础路径
     dest: 'dist', // 指定 vuepress build 的输出目录
     markdown: {
         extendMarkdown: (md) => mdPlugin(md)
@@ -40,7 +40,6 @@ module.exports = {
         sidebar: [
             ['/zh/guide/', '介绍'],
             ['/zh/demo/', '示例'],
-            ['/zh/home/', 'home'],
         ]
     },
     vue: {

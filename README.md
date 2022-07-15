@@ -21,6 +21,13 @@ import "@sangtian152/virtual-tree/lib/vl-tree.css";
 Vue.use(VlTree);
 ```
 
+
+### 文档
+
+[说明文档](https://sangtian152.github.io/virtual-tree/).
+
+
+
 ### VirtualTree Attributes
 
 | Attribute             | Description                                                                                                                                  | Type                  | Default |

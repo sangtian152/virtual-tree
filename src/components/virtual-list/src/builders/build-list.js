@@ -438,7 +438,7 @@ const createList = ({
       const listContainer = h(
         Container,
         {
-          class: [bem('window'), 'v2-scrollbar__content', this.className],
+          class: [bem('window'), 'vl-scrollbar__content', this.className],
           style: this.windowStyle,
           on: {
             scroll: this.onScroll,
@@ -454,7 +454,7 @@ const createList = ({
         'div',
         {
           key: 0,
-          class: ['v2-scrollbar', bem('wrapper'), this.states.scrollbarAlwaysOn ? 'always-on' : ''],
+          class: ['vl-scrollbar', bem('wrapper'), this.states.scrollbarAlwaysOn ? 'always-on' : ''],
         },
         [listContainer, scrollbar]
       )

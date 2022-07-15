@@ -13,7 +13,7 @@
       :perf-mode="perfMode"
     >
       <template v-slot="{ node, style }">
-        <v2-tree-node
+        <vl-tree-node
           :key="node.key"
           :style="style"
           :node="node"
@@ -38,7 +38,7 @@
 </template>
 
 <script>
-import V2TreeNode from './tree-node.vue'
+import VlTreeNode from './tree-node.vue'
 import { useTree } from './useTree'
 import { FixedSizeList } from '@/components/virtual-list'
 import { ROOT_TREE_INJECTION_KEY, treeProps } from './virtual-tree'
@@ -47,7 +47,7 @@ import { createNamespace } from '@/utils/created'
 export default {
   name: 'VlTree',
   components: {
-    V2TreeNode,
+    VlTreeNode,
     FixedSizeList,
   },
   mixins: [useTree],

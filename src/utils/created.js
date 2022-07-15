@@ -87,6 +87,6 @@ function transformFunctionComponent(
   }
 
 export function createNamespace(name) {
-    name = 'v2-' + name;
+    name = 'vl-' + name;
     return [createComponent(name), createBEM(name)];
 }

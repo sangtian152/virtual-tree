@@ -1,14 +1,16 @@
 {
-  "name": "virtual-tree",
-  "version": "0.1.0",
+  "name": "@sangtian152/virtual-tree",
+  "version": "0.1.1",
   "private": false,
+  "main": "lib/vl-tree.common.js",
+  "license": "MIT",
   "homepage": "https://sangtian152.github.io/virtual-tree",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "npm run build:docs && npm run build:lib",
     "lint": "vue-cli-service lint",
     "build:docs": "vuepress build docs",
-    "build:lib": "vue-cli-service build --target lib --name vue2-tree --dest lib src/index.js"
+    "build:lib": "vue-cli-service build --target lib --name vl-tree --dest lib src/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",

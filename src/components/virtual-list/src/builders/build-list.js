@@ -17,12 +17,11 @@ import {
   SCROLL_EVT,
 } from '../defaults'
 
-const _createNamespace = createNamespace('tree'),
+const _createNamespace = createNamespace('virtual-list'),
     createComponent = _createNamespace[0],
     bem = _createNamespace[1]
 
 const createList = ({
-  name,
   getOffset,
   getItemSize,
   getItemOffset,
@@ -31,7 +30,6 @@ const createList = ({
   getStopIndexForStartIndex,
 }) => {
   return createComponent({
-    name: name || 'V2VirtualList',
     props: virtualizedListProps,
     data() {
       return {

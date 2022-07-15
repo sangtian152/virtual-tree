@@ -4,7 +4,6 @@ const _createNamespace = createNamespace('checkbox'),
     createComponent = _createNamespace[0],
     bem = _createNamespace[1]
   export default createComponent({
-    name: 'V2Checkbox',
     data() {
       return {
         selfModel: false,

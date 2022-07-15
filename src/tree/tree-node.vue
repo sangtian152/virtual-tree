@@ -23,7 +23,7 @@
       :class="bem('content')"
       :style="{ paddingLeft: `${(node.level - 1) * indent}px` }"
     >
-      <v2-icon
+      <vl-icon
         v-if="icon"
         :name="icon"
         :class="[
@@ -36,8 +36,8 @@
         ]"
         @click.native.stop="handleExpandIconClick"
       >
-      </v2-icon>
-      <v2-checkbox
+      </vl-icon>
+      <vl-checkbox
         v-if="showCheckbox"
         :value="checked"
         :indeterminate="indeterminate"
@@ -45,16 +45,16 @@
         @change="handleCheckChange"
         @click.native.stop
       />
-      <v2-node-content :node="node" />
+      <vl-node-content :node="node" />
     </div>
   </div>
 </template>
 
 <script>
-import V2Icon from '@/components/icon'
-import V2Checkbox from '@/components/checkbox'
+import VlIcon from '@/components/icon'
+import VlCheckbox from '@/components/checkbox'
 import { createNamespace } from '@/utils/created';
-import V2NodeContent from './tree-node-content'
+import VlNodeContent from './tree-node-content'
 import {
   NODE_CONTEXTMENU,
   ROOT_TREE_INJECTION_KEY,
@@ -62,11 +62,11 @@ import {
 } from './virtual-tree'
 
 export default {
-  name: 'V2TreeNode',
+  name: 'VlTreeNode',
   components: {
-    V2Icon,
-    V2Checkbox,
-    V2NodeContent,
+    VlIcon,
+    VlCheckbox,
+    VlNodeContent,
   },
   props: treeNodeProps,
   inject: [ROOT_TREE_INJECTION_KEY],

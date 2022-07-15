@@ -4,7 +4,7 @@
 @include b(scrollbar) {
     position: relative;
     &:hover {
-        .v2-scrollbar__virtual {
+        .vl-scrollbar__virtual {
             opacity: 1;
         }
     }

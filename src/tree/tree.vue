@@ -45,7 +45,7 @@ import { ROOT_TREE_INJECTION_KEY, treeProps } from './virtual-tree'
 import { createNamespace } from '@/utils/created'
 
 export default {
-  name: 'V2Tree',
+  name: 'VlTree',
   components: {
     V2TreeNode,
     FixedSizeList,

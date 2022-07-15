@@ -5,7 +5,7 @@
 <script>
   import { createNamespace } from '@/utils/created';
   export default {
-    name: 'V2Icon',
+    name: 'VlIcon',
 
     props: {
       name: String

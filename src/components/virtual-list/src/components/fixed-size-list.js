@@ -11,7 +11,6 @@ import {
 
 
 const FixedSizeList = buildList({
-  name: 'V2FixedSizeList',
   getItemOffset: ({ itemSize }, index) => index * (itemSize),
 
   getItemSize: ({ itemSize }) => itemSize,

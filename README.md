@@ -5,6 +5,21 @@
 参照[element-plus](https://element-plus.gitee.io/zh-CN/)中TreeV2改造vue2.x版本虚拟化树形控件  
 不论你的数据量多大，虚拟树都能毫无压力地处理。
 
+### 安装
+```
+npm install @sangtian152/virtual-tree--save
+# or 
+yarn add @sangtian152/virtual-tree
+```
+
+### 引入
+```
+import Vue from 'vue';
+import VlTree from '@sangtian152/virtual-tree';
+import "@sangtian152/virtual-tree/lib/vl-tree.css";
+
+Vue.use(VlTree);
+```
 
 ### VirtualTree Attributes
 
@@ -34,7 +49,7 @@
 | children  | 指定子树为节点对象的某个属性值                              | string         | children |
 | disabled  | 指定节点选择框是否禁用为节点对象的某个属性值 disabled           | string         | disabled |
 
-## VirtualTree Method
+### VirtualTree Method
 
 Tree内部使用TreeNode类型的对象来包装用户传入的数据，用来构造树节点之间的关系。 Tree 暴露了以下方法：
 | Method | Description | Parameters |

@@ -39,8 +39,8 @@
 
 <script>
 import V2TreeNode from './tree-node.vue'
-import { FixedSizeList } from '@/components/virtual-list'
 import { useTree } from './useTree'
+import { FixedSizeList } from '@/components/virtual-list'
 import { ROOT_TREE_INJECTION_KEY, treeProps } from './virtual-tree'
 import { createNamespace } from '@/utils/created'
 

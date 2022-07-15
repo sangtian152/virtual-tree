@@ -28,9 +28,9 @@ const buildTransformers = () => {
   }
 
 module.exports = {
-    title: 'Hello VuePress',
-    description: 'Just playing around',
-    base: '/virtual-tree', // 部署站点的基础路径
+    title: 'Virtual Tree',
+    description: '虚拟化树形控件，致力于解决数据量过大导致页面卡顿甚至崩溃问题',
+    base: '/virtual-tree/', // 部署站点的基础路径
     dest: 'dist', // 指定 vuepress build 的输出目录
     markdown: {
         extendMarkdown: (md) => mdPlugin(md)

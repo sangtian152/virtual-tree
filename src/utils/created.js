@@ -1,6 +1,11 @@
 import { isFunction } from './'
-import { camelize } from './format/string';
 import { SlotsMixin } from '@/mixins/slots';
+
+
+export function camelize(str) {
+  const camelizeRE = /-(\w)/g;
+  return str.replace(camelizeRE, (_, c) => c.toUpperCase());
+}
 
 function gen(name, mods) {
     if (!mods) {

@@ -6,13 +6,13 @@ export function debugWarn(scope, message) {
     if (process.env.NODE_ENV !== 'production') {
       const error = isString(scope)
         ? `[${scope}] ${message}`
-        : scope
+        : scope;
       // eslint-disable-next-line no-console
-      console.warn(error)
+      console.warn(error);
     }
 }
 
-const isClient = !Vue.prototype.$isServer
+const isClient = !Vue.prototype.$isServer;
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 
@@ -22,7 +22,7 @@ export function hasOwn(obj, key) {
 }
 
 export function isNumber(obj) {
-  return typeof obj === 'number' && !isNaN(obj)
+  return typeof obj === 'number' && !isNaN(obj);
 }
 
 export function isString(obj) {
@@ -34,12 +34,12 @@ export function isFunction(val) {
 }
 
 export const isFirefox = () =>
-  isClient && /firefox/i.test(window.navigator.userAgent)
+  isClient && /firefox/i.test(window.navigator.userAgent);
 
 export const rAF = (fn) =>
   isClient
     ? window.requestAnimationFrame(fn)
-    : (setTimeout(fn, 16))
+    : (setTimeout(fn, 16));
 
 export const cAF = (handle) =>
-  isClient ? window.cancelAnimationFrame(handle) : clearTimeout(handle)
+  isClient ? window.cancelAnimationFrame(handle) : clearTimeout(handle);

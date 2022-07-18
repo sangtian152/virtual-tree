@@ -15,15 +15,6 @@ const useWheel = (
   let frameHandle
   let offset = 0
 
-  // let scrollLock = false
-  // let lockHandle = null
-
-  // const lockScroll = () => {
-  //   clearTimeout(lockHandle)
-  //   scrollLock = true
-  //   lockHandle = setTimeout(() => scrollLock = false, 50)
-  // }
-
   const hasReachedEdge = (offset) => {
     const edgeReached =
       (offset < 0 && atStartEdge.value) || (offset > 0 && atEndEdge.value)

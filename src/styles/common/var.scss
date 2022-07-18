@@ -23,24 +23,9 @@ $--border-color-extra-light: #F2F6FC !default;
 -------------------------- */
 $--border-width-base: 1px !default;
 $--border-style-base: solid !default;
-$--border-color-hover: $--color-text-placeholder !default;
 $--border-base: $--border-width-base $--border-style-base $--border-color-base !default;
 /// borderRadius|1|Radius|0
-$--border-radius-base: 4px !default;
-/// borderRadius|1|Radius|0
 $--border-radius-small: 2px !default;
-/// borderRadius|1|Radius|0
-$--border-radius-circle: 100% !default;
-/// borderRadius|1|Radius|0
-$--border-radius-zero: 0 !default;
-
-// Box-shadow
-/// boxShadow|1|Shadow|1
-$--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04) !default;
-// boxShadow|1|Shadow|1
-$--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12) !default;
-/// boxShadow|1|Shadow|1
-$--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1) !default;
 
 /* Fill
 -------------------------- */
@@ -48,31 +33,18 @@ $--fill-base: $--color-white !default;
 
 /* Typography
 -------------------------- */
-$--font-path: 'fonts' !default;
-$--font-display: 'auto' !default;
 /// fontSize|1|Font Size|0
 $--font-size-base: 14px !default;
 /// fontWeight|1|Font Weight|1
 $--font-weight-primary: 500 !default;
-/* Size
--------------------------- */
-$--size-base: 14px !default;
 
 /* z-index
 -------------------------- */
 $--index-normal: 1 !default;
-$--index-top: 1000 !default;
-$--index-popper: 2000 !default;
 
 /* Disable base
 -------------------------- */
 $--disabled-color-base: $--color-text-placeholder !default;
-$--disabled-border-base: $--border-color-light !default;
-
-/* Icon
--------------------------- */
-$--icon-color: #666 !default;
-$--icon-color-base: $--color-info !default;
 
 /* Checkbox
 -------------------------- */

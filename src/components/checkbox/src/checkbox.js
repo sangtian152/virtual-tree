@@ -1,4 +1,3 @@
-<script>
 import { createNamespace } from '@/utils/created';
 const _createNamespace = createNamespace('checkbox'),
     createComponent = _createNamespace[0],
@@ -60,6 +59,50 @@ const _createNamespace = createNamespace('checkbox'),
           this.model = true;
         }
       },
+      genInput() {
+        return (
+          <input
+            class={bem('original')}
+            type="checkbox"
+            disabled={this.disabled}
+            name={this.name}
+            checked={this.model}
+            aria-hidden={this.indeterminate ? 'true' : 'false'}
+            value={this.label}
+            onChange={this.handleChange}
+            onFocus={() => { this.focus = true }}
+            onBlur={() => { this.focus = false }}
+          />
+        )
+      },
+      genIcon() {
+        return (
+          <span
+            class={bem('inner')}
+            >
+          </span>
+        )
+      },
+      genInner() {
+        const Children = [this.genInput(), this.genIcon()]
+        return (
+            <span
+              class={[
+                bem('input'),
+                {
+                  'is-disabled': this.disabled,
+                  'is-checked': this.isChecked,
+                  'is-indeterminate': this.indeterminate,
+                  'is-focus': this.focus
+                }]}
+                tabindex={this.indeterminate ? 0 : false}
+                role={this.indeterminate ? 'checkbox' : false}
+                aria-checked={this.indeterminate ? 'mixed' : false}
+              >
+                {Children}
+              </span>
+          )
+      },
       handleChange(ev) {
         this.$emit('change', ev.target.checked, ev);
       }
@@ -74,6 +117,7 @@ const _createNamespace = createNamespace('checkbox'),
       }
     },
     render(h){
+      const innerEl = this.genInner(h)
       return h('label',
         {
           class: [
@@ -84,50 +128,6 @@ const _createNamespace = createNamespace('checkbox'),
           attrs: {
             id: this.id
           }
-        }, [
-          h(
-            'span',
-            {
-              class: [
-                bem('input'),
-                {
-                  'is-disabled': this.disabled,
-                  'is-checked': this.isChecked,
-                  'is-indeterminate': this.indeterminate,
-                  'is-focus': this.focus
-                }],
-              attrs: {
-                tabindex: this.indeterminate ? 0 : false,
-                role: this.indeterminate ? 'checkbox' : false,
-                'aria-checked': this.indeterminate ? 'mixed' : false
-              }
-            }, [
-              h('span', {
-                class: bem('inner')
-              }),
-              h('input', {
-                
-                class: bem('original'),
-                attrs: {
-                  type: "checkbox",
-                  disabled: this.disabled,
-                  value: this.label,
-                  name: this.name,
-                  checked: this.model,
-                  'aria-hidden': this.indeterminate ? 'true' : 'false',
-                },
-                // v-model="model"
-                on: {
-                  change: this.handleChange,
-                  focus: () => { this.focus = true },
-                  blur: () => { this.focus = false }
-                }
-                
-              })
-            ]
-          )
-        ])
-      // )
+        }, [ innerEl ])
     }
   });
-</script>

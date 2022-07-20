@@ -22,7 +22,7 @@ Vue.use(VlTree);
 ```
 
 ### 示例
-![效果展示](vl-tree.gif)
+![效果展示](https://oscimg.oschina.net/oscnet/up-e799b0034ca79ae45676ac5522c1593dff8.gif)
 
 ### 文档
 

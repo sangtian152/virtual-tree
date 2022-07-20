@@ -21,6 +21,8 @@ import "@sangtian152/virtual-tree/lib/vl-tree.css";
 Vue.use(VlTree);
 ```
 
+### 示例
+![输入图片说明](vl-tree.gif)
 
 ### 文档
 

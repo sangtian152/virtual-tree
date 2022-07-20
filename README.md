@@ -22,7 +22,7 @@ Vue.use(VlTree);
 ```
 
 ### 示例
-![输入图片说明](vl-tree.gif)
+![效果展示](vl-tree.gif)
 
 ### 文档
 

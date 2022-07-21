@@ -2,7 +2,7 @@
 ## 虚拟化树形控件
 
 ### 简介
-参照[element-plus](https://element-plus.gitee.io/zh-CN/)中TreeV2改造vue2.x版本虚拟化树形控件  
+参考[element-plus](https://element-plus.gitee.io/zh-CN/)中TreeV2改造vue2.x版本虚拟化树形控件  
 不论你的数据量多大，虚拟树都能毫无压力地处理。
 
 ### 安装
@@ -24,9 +24,10 @@ Vue.use(VlTree);
 ### 示例
 ![效果展示](https://oscimg.oschina.net/oscnet/up-e799b0034ca79ae45676ac5522c1593dff8.gif)
 
-### 文档
 
-[说明文档](https://sangtian152.github.io/virtual-tree/).
+### 演示地址
+
+[演示地址](https://sangtian152.github.io/virtual-tree/zh/demo/).
 
 
 

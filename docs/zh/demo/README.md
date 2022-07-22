@@ -23,6 +23,17 @@ checkbox-tree
 :::
 
 
+## 节点过滤
+
+在需要对节点进行过滤时，调用 Tree 实例的 filter 方法， 参数为关键字。 需要注意的是，此时需要设置 filter-method，值为过滤函数。
+
+:::demo
+
+filter-tree
+
+:::
+
+
 
 ## Attributes
 

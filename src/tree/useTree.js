@@ -147,7 +147,7 @@ export const useTree = {
     filter(query) {
       const keys = this.doFilter(query)
       if (keys) {
-        this.expandedKeySet.set(...keys)
+        this.expandedKeySet = keys
       }
     },
     
@@ -155,7 +155,7 @@ export const useTree = {
       if (!this.filterable) {
         return
       }
-      const expandKeySet = new Set()
+      const expandKeySet = new _Set()
       const hiddenExpandIconKeys = this.hiddenExpandIconKeySet
       const hiddenKeys = this.hiddenNodeKeySet
       const family = []

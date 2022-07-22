@@ -93,5 +93,6 @@ Tree内部使用TreeNode类型的对象来包装用户传入的数据，用来�
 | Name | Description                                                                                    |
 | ---- | ---------------------------------------------------------------------------------------------- |
 | -    | 自定义树节点的内容。 作用域参数为 { node: TreeNode, data: TreeNodeData } |
+| icon    | 自定义展开收起图标。 作用域参数为 { node: TreeNode, data: TreeNodeData } |
 
 

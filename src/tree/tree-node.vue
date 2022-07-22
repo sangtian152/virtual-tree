@@ -7,8 +7,8 @@
         expanded: expanded,
         current: current,
         focusable: !disabled,
-        checked: !disabled && checked
-      }
+        checked: !disabled && checked,
+      },
     ]"
     role="treeitem"
     tabindex="-1"
@@ -23,20 +23,22 @@
       :class="bem('content')"
       :style="{ paddingLeft: `${(node.level - 1) * indent}px` }"
     >
-      <vl-icon
-        v-if="icon"
-        :name="icon"
+      <span
         :class="[
+          bem('expand-icon'),
           {
             'is-leaf': node.isLeaf,
-            'is-hidden' :hiddenExpandIcon,
+            'is-hidden': hiddenExpandIcon,
             expanded: !node.isLeaf && expanded,
           },
-          bem('expand-icon'),
         ]"
-        @click.native.stop="handleExpandIconClick"
+        @click.stop="handleExpandIconClick"
       >
-      </vl-icon>
+        <vl-icon
+          :node="node"
+          name="caret-right"
+        />
+      </span>
       <vl-checkbox
         v-if="showCheckbox"
         :value="checked"
@@ -51,18 +53,18 @@
 </template>
 
 <script>
-import VlIcon from '@/components/icon'
-import VlCheckbox from '@/components/checkbox'
-import { createNamespace } from '@/utils/created';
-import VlNodeContent from './tree-node-content'
+import VlIcon from "@/components/icon";
+import VlCheckbox from "@/components/checkbox";
+import { createNamespace } from "@/utils/created";
+import VlNodeContent from "./tree-node-content";
 import {
   NODE_CONTEXTMENU,
   ROOT_TREE_INJECTION_KEY,
   treeNodeProps,
-} from './virtual-tree'
+} from "./virtual-tree";
 
 export default {
-  name: 'VlTreeNode',
+  name: "VlTreeNode",
   components: {
     VlIcon,
     VlCheckbox,
@@ -70,39 +72,41 @@ export default {
   },
   props: treeNodeProps,
   inject: [ROOT_TREE_INJECTION_KEY],
+  provide() {
+    return {
+      treeSlot: this.tree.$scopedSlots,
+    };
+  },
   data() {
     return {
-      bem: createNamespace('tree')[1]
-    }
+      bem: createNamespace("tree")[1],
+    };
   },
   computed: {
     tree() {
-      return this[ROOT_TREE_INJECTION_KEY] || {}
+      return this[ROOT_TREE_INJECTION_KEY] || {};
     },
     indent() {
-      return this.tree.indent || 16
+      return this.tree.indent || 16;
     },
-    icon() {
-      return this.tree.icon || 'caret-right'
-    }
   },
   methods: {
-    handleClick (e) {
-      this.$emit('click', this.node, e)
+    handleClick(e) {
+      this.$emit("click", this.node, e);
     },
-    handleExpandIconClick () {
-      this.$emit('toggle', this.node)
+    handleExpandIconClick() {
+      this.$emit("toggle", this.node);
     },
-    handleCheckChange (value) {
-      this.$emit('check', this.node, value)
+    handleCheckChange(value) {
+      this.$emit("check", this.node, value);
     },
-    handleContextMenu (event) {
+    handleContextMenu(event) {
       if (this.tree.$listeners[NODE_CONTEXTMENU]) {
-        event.stopPropagation()
-        event.preventDefault()
+        event.stopPropagation();
+        event.preventDefault();
       }
-      this.tree.$emit(NODE_CONTEXTMENU, event, this.node.data, this.node)
-    }
-  }
-}
+      this.tree.$emit(NODE_CONTEXTMENU, event, this.node.data, this.node);
+    },
+  },
+};
 </script>

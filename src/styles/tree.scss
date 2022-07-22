@@ -2,6 +2,10 @@
 @import "mixins/mixins";
 
 @include b(tree) {
+    @include e(content) {
+        display: flex;
+        align-items: center;
+    }
     @include e(expand-icon) {
         cursor: pointer;
         transform: rotate(0deg);

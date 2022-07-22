@@ -1,6 +1,6 @@
 <template>
 <div>
-    <vl-tree ref="tree" :data="tree"></vl-tree>
+    <vl-tree ref="tree" :data="tree" />
 </div>
 </template>
 <script>

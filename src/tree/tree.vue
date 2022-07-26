@@ -63,6 +63,9 @@ export default {
       bem: createNamespace('tree')[1]
     }
   },
+  created() {
+    console.log(this)
+  },
   methods: {},
 }
 </script>

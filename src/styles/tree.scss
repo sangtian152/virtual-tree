@@ -14,8 +14,10 @@
             transform: rotate(90deg);
         }
         @include when(leaf) {
-            color: transparent;
             cursor: default;
+            .vl-icon__caret-right {
+                color: transparent;
+            }
         }
     }
 }

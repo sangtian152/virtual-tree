@@ -20,6 +20,7 @@
     "build:lib": "vue-cli-service build --target lib --name vl-tree --dest lib src/index.js"
   },
   "dependencies": {
+    "@sangtian152/stl": "^0.1.1",
     "core-js": "^3.6.5",
     "lodash-unified": "^1.0.2",
     "memoize-one": "^6.0.0",

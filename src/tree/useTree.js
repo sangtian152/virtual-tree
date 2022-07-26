@@ -9,17 +9,17 @@ import {
   SetOperationEnum,
 } from './virtual-tree'
 import { isFunction } from '@/utils'
-import { _Set } from '@/define/set'
+import { JSet } from '@sangtian152/stl'
 export const useTree = {
   data(){
     return {
       tree: {},
       currentKey: null,
-      checkedKeys: new _Set(),
-      indeterminateKeys: new _Set(),
-      hiddenNodeKeySet: new _Set(),
-      hiddenExpandIconKeySet:  new _Set(),
-      expandedKeySet: new _Set(this.defaultExpandedKeys)
+      checkedKeys: new JSet(),
+      indeterminateKeys: new JSet(),
+      hiddenNodeKeySet: new JSet(),
+      hiddenExpandIconKeySet:  new JSet(),
+      expandedKeySet: new JSet(this.defaultExpandedKeys)
     }
   },
   computed: {
@@ -155,7 +155,7 @@ export const useTree = {
       if (!this.filterable) {
         return
       }
-      const expandKeySet = new _Set()
+      const expandKeySet = new JSet()
       const hiddenExpandIconKeys = this.hiddenExpandIconKeySet
       const hiddenKeys = this.hiddenNodeKeySet
       const family = []

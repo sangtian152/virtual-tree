@@ -117,6 +117,10 @@ const createList = ({
 
       clientSize() {
         return this._isHorizontal ? this.width : this.height
+      },
+
+      getItemStyleCache() {
+        return  useCache(this.perfMode)
       }
     },
     mounted() {
@@ -126,7 +130,6 @@ const createList = ({
       this.doUpdated()
     },
     methods: {
-      getItemStyleCache: useCache(),
       onWheel() {
         return useWheel(
           {

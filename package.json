@@ -23,7 +23,9 @@
     "@sangtian152/stl": "^0.1.1",
     "core-js": "^3.6.5",
     "lodash-unified": "^1.0.2",
-    "memoize-one": "^6.0.0",
+    "memoize-one": "^6.0.0"
+  },
+  "peerDependencies": {
     "vue": "^2.6.11"
   },
   "devDependencies": {

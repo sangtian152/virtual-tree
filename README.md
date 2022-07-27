@@ -1,6 +1,11 @@
 
 ## 虚拟化树形控件
 
+[![NPM version](https://img.shields.io/npm/v/@sangtian152/virtual-tree)](https://www.npmjs.com/package/@sangtian152/virtual-tree)
+![GitHub](https://img.shields.io/github/license/sangtian152/virtual-tree)
+![GitHub Repo stars](https://img.shields.io/github/stars/sangtian152/virtual-tree?style=social)
+![GitHub forks](https://img.shields.io/github/forks/sangtian152/virtual-tree?style=social)
+
 ### 简介
 参考[element-plus](https://element-plus.gitee.io/zh-CN/)中TreeV2改造vue2.x版本虚拟化树形控件  
 不论你的数据量多大，虚拟树都能毫无压力地处理。

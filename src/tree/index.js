@@ -1,18 +1,38 @@
+
+import VlTreeNode from './tree-node.js'
+import { FixedSizeList } from '@/components/virtual-list'
+import { createNamespace } from "@/utils/created";
+const _createNamespace = createNamespace("tree"),
+  createComponent = _createNamespace[0],
+  bem = _createNamespace[1];
 import {
+  treeProps,
   CURRENT_CHANGE,
   NODE_CLICK,
   NODE_COLLAPSE,
   NODE_EXPAND,
   NODE_CHECK,
   NODE_CHECK_CHANGE,
+  ROOT_TREE_INJECTION_KEY,
   TreeOptionsEnum,
   SetOperationEnum,
 } from './virtual-tree'
 import { isFunction } from '@/utils'
 import { JSet } from '@sangtian152/stl'
-export const useTree = {
-  data(){
+export default createComponent({
+  components: {
+    VlTreeNode,
+    FixedSizeList,
+  },
+  props: treeProps,
+  provide() {
     return {
+      [ROOT_TREE_INJECTION_KEY]: this,
+    }
+  },
+  data() {
+    return {
+      itemSize: 26,
       tree: {},
       currentKey: null,
       checkedKeys: new JSet(),
@@ -484,6 +504,54 @@ export const useTree = {
           }
         }
       }
-    }
+    },
+    genEmpty() {
+      return (
+        <div class="empty-block">
+          <span class="empty-text">{this.emptyText}</span>
+        </div>
+      )
+    },
+    genFixedSizeList() {
+        const scopedSlots = {
+          default: ({node, style}) => (
+            <vl-tree-node
+              key={node.key}
+              style={style}
+              node={node}
+              expanded={this.expandedKeySet.has(node.key)}
+              show-checkbox={this.showCheckbox}
+              checked={this.checkedKeys.has(node.key)}
+              indeterminate={this.indeterminateKeys.has(node.key)}
+              disabled={!!node.disabled}
+              current={!!this.currentKey && this.currentKey===node.key}
+              onClick={this.handleNodeClick}
+              onToggle={this.toggleExpand}
+              onCheck={this.handleNodeCheck}
+            />
+          )
+        }
+        return (
+          <fixed-size-list
+            class-name="virtual-list"
+            data={this.flattenTree}
+            total={this.flattenTree.length}
+            height={this.height}
+            item-size={this.itemSize}
+            perf-mode={this.perfMode}
+            scopedSlots={scopedSlots}
+          />
+        )
+    },
   },
-}
+  render() {
+    return (
+      <div
+        class={[bem(), { ['highlight-current']: this.highlightCurrent }]}
+        role="tree"
+      >
+        {this.isNotEmpty ? this.genFixedSizeList() : this.genEmpty()}
+      </div>
+    )
+  }
+})

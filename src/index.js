@@ -1,7 +1,7 @@
 // 核心插件
 import corePlugin from './plugin/core'
 // 组件
-import Tree from './tree/tree.vue'
+import Tree from './tree'
 // 样式
 import "@/styles/index.scss";
 import "@/styles/checkbox.scss";

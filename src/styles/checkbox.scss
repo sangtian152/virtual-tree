@@ -10,8 +10,6 @@
     display: inline-block;
     white-space: nowrap;
     user-select: none;
-    margin-right: 30px;
-  
     @include e(input) {
       white-space: nowrap;
       cursor: pointer;
@@ -157,9 +155,5 @@
       padding-left: 10px;
       line-height: 19px;
       font-size: $--checkbox-font-size;
-    }
-  
-    &:last-of-type {
-      margin-right: 0;
     }
 }

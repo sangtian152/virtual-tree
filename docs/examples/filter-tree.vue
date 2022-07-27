@@ -24,6 +24,10 @@ export default {
     },
     created() {
         this.tree = this.createData(4, 30, 40)
+        console.log(this.tree, 15)
+    },
+    mounted() {
+        console.log('mounted')
     },
     methods: {
         getKey (prefix, id) {

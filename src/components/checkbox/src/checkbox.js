@@ -116,18 +116,18 @@ const _createNamespace = createNamespace('checkbox'),
         this.$el.setAttribute('aria-controls', this.controls);
       }
     },
-    render(h){
-      const innerEl = this.genInner(h)
-      return h('label',
-        {
-          class: [
+    render(){
+      const innerEl = this.genInner()
+      return (
+        <label
+          class={[
             bem(),
             { 'is-disabled': this.disabled },
             { 'is-checked': this.isChecked }
-          ],
-          attrs: {
-            id: this.id
-          }
-        }, [ innerEl ])
+          ]}
+          id={this.id}
+        > 
+          {innerEl}
+        </label>)
     }
   });

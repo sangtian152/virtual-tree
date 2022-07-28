@@ -14,7 +14,7 @@
 
 ### 安装
 ```
-npm install @sangtian152/virtual-tree--save
+npm install @sangtian152/virtual-tree --save
 # or 
 yarn add @sangtian152/virtual-tree
 ```

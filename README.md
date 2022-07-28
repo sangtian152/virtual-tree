@@ -3,6 +3,8 @@
 
 [![NPM version](https://img.shields.io/npm/v/@sangtian152/virtual-tree)](https://www.npmjs.com/package/@sangtian152/virtual-tree)
 ![GitHub](https://img.shields.io/github/license/sangtian152/virtual-tree)
+[![star](https://gitee.com/sangtian152/virtual-tree/badge/star.svg?theme=dark)](https://gitee.com/sangtian152/virtual-tree/stargazers)
+[![fork](https://gitee.com/sangtian152/virtual-tree/badge/fork.svg?theme=dark)](https://gitee.com/sangtian152/virtual-tree/members)
 ![GitHub Repo stars](https://img.shields.io/github/stars/sangtian152/virtual-tree?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/sangtian152/virtual-tree?style=social)
 

@@ -512,25 +512,25 @@ export default createComponent({
         </div>
       )
     },
+    genTreeNode({node, style}) {
+      return (
+        <vl-tree-node
+          key={node.key}
+          style={style}
+          node={node}
+          expanded={this.expandedKeySet.has(node.key)}
+          show-checkbox={this.showCheckbox}
+          checked={this.checkedKeys.has(node.key)}
+          indeterminate={this.indeterminateKeys.has(node.key)}
+          disabled={!!node.disabled}
+          current={!!this.currentKey && this.currentKey===node.key}
+          onClick={this.handleNodeClick}
+          onToggle={this.toggleExpand}
+          onCheck={this.handleNodeCheck}
+        />
+      )
+    },
     genFixedSizeList() {
-        const scopedSlots = {
-          default: ({node, style}) => (
-            <vl-tree-node
-              key={node.key}
-              style={style}
-              node={node}
-              expanded={this.expandedKeySet.has(node.key)}
-              show-checkbox={this.showCheckbox}
-              checked={this.checkedKeys.has(node.key)}
-              indeterminate={this.indeterminateKeys.has(node.key)}
-              disabled={!!node.disabled}
-              current={!!this.currentKey && this.currentKey===node.key}
-              onClick={this.handleNodeClick}
-              onToggle={this.toggleExpand}
-              onCheck={this.handleNodeCheck}
-            />
-          )
-        }
         return (
           <fixed-size-list
             class-name="virtual-list"
@@ -539,7 +539,9 @@ export default createComponent({
             height={this.height}
             item-size={this.itemSize}
             perf-mode={this.perfMode}
-            scopedSlots={scopedSlots}
+            scopedSlots={{
+              default: this.genTreeNode
+            }}
           />
         )
     },

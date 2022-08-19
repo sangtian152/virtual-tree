@@ -32,7 +32,6 @@ export default createComponent({
   },
   data() {
     return {
-      itemSize: 26,
       tree: {},
       currentKey: null,
       checkedKeys: new JSet(),

@@ -32,6 +32,10 @@ export const treeProps = {
     type: Number,
     default: 200,
   },
+  itemSize: {
+    type: Number,
+    default: 26
+  },
   props: {
     type: Object,
     default: () => {

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <vl-tree ref="tree" :data="tree" />
+    <vl-tree ref="tree" :data="tree" :default-expanded-keys="['node-1']" />
 </div>
 </template>
 <script>

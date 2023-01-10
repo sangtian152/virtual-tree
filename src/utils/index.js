@@ -12,7 +12,7 @@ export function debugWarn(scope, message) {
     }
 }
 
-const isClient = !Vue.prototype.$isServer;
+export const isClient = !Vue.prototype.$isServer;
 
 const hasOwnProperty = Object.prototype.hasOwnProperty;
 

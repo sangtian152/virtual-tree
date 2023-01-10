@@ -1,6 +1,6 @@
 {
   "name": "@sangtian152/virtual-tree",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "private": false,
   "main": "lib/vl-tree.common.js",
   "license": "MIT",
@@ -61,6 +61,8 @@
   "browserslist": [
     "> 1%",
     "last 2 versions",
-    "not dead"
+    "not dead",
+    "Chrome 40.0",
+    "ie >= 11"
   ]
 }

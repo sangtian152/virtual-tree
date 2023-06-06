@@ -106,6 +106,9 @@ export default createComponent({
       },
       immediate: true
     },
+    defaultExpandedKeys(val) {
+      this.expandedKeySet = new JSet(...val)
+    },
     tree: {
       handler() {
         this.$nextTick(() => {

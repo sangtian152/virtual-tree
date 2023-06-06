@@ -1,13 +1,14 @@
 <template>
 <div>
-    <vl-tree ref="tree" :data="tree" :default-expanded-keys="['node-1']" />
+    <vl-tree ref="tree" :data="tree" :default-expanded-keys="expandedKeys" />
 </div>
 </template>
 <script>
 export default {
     data() {
         return {
-            tree: []
+            tree: [],
+            expandedKeys: ['node-1']
         }
     },
     created() {

@@ -38,7 +38,7 @@ export default createComponent({
       indeterminateKeys: new JSet(),
       hiddenNodeKeySet: new JSet(),
       hiddenExpandIconKeySet:  new JSet(),
-      expandedKeySet: new JSet(...this.defaultExpandedKeys)
+      expandedKeySet: new JSet(this.defaultExpandedKeys)
     }
   },
   computed: {
@@ -107,7 +107,7 @@ export default createComponent({
       immediate: true
     },
     defaultExpandedKeys(val) {
-      this.expandedKeySet = new JSet(...val)
+      this.expandedKeySet = new JSet(val)
     },
     tree: {
       handler() {

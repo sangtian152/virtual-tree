@@ -1,6 +1,6 @@
 <template>
 <div>
-    <vl-tree ref="tree" :data="tree" showCheckbox></vl-tree>
+    <vl-tree ref="tree" :data="tree" showCheckbox :defaultCheckedKeys="defaultCheckedKeys"></vl-tree>
 </div>
 </template>
 <script>
@@ -11,11 +11,14 @@ export default {
         }
     },
     created() {
-        this.tree = this.createData(4, 30, 40)
-        console.log(this.tree, 15)
+        this.tree = this.createData(3, 100, 40)
+        this.defaultCheckedKeys = [this.tree[0].id]
     },
     mounted() {
-        console.log('mounted')
+        setTimeout(() => {
+            this.defaultCheckedKeys.push(this.tree[1].id)
+            this.$refs.tree.setCheckedKeys([this.tree[1].id, this.tree[2].id, this.tree[0].id])
+        }, 1000)
     },
     methods: {
         getKey (prefix, id) {
